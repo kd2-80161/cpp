@@ -48,7 +48,7 @@ public:
     }
     void printTime()
     {
-        cout << h << m << s;
+        cout << getHour() <<":"<< getMinute()<<":" << getSeconds()<<endl;
     }
     void setHour(int h)
     {
@@ -58,7 +58,7 @@ public:
     {
         this->m = m;
     }
-    int setSeconds(int s)
+    void setSeconds(int s)
     {
         this->s = s;
     }
@@ -66,7 +66,24 @@ public:
 
 int main()
 {
+    int numTimes;
     cout<<"Enter the number of times you want to create the objects"<<endl;
-   
-    
+    cin>> numTimes;
+    Time* timearray = new Time[numTimes];
+
+     for (int i = 0; i < numTimes; ++i) {
+        int h, m, s;
+        cout << "Enter time for object " << i + 1 << " (HH MM SS): ";
+        cin >> h >> m >> s;
+        timearray[i] = Time(h, m, s);
+     }
+
+        // Print the Time objects
+    cout << "Time objects created:" << endl;
+    for (int i = 0; i < numTimes; ++i) {
+        timearray[i].printTime();
+    }
+
+    delete[] timearray;
+    return 0;
 }
