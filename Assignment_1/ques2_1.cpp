@@ -57,6 +57,7 @@ int main()
 
        switch (choice)
        {
+
        case 1:
         /* code */
         d1.initDate();
@@ -77,9 +78,10 @@ int main()
         case 5:
         cout<<"Exiting Program";
         break;
-       default:
-       cout<<"Invalid Choice";
+        default:
+        cout<<"Invalid Choice";
         break;
+
        }    
     } while (choice != 5);
 }
