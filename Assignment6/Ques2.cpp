@@ -40,22 +40,20 @@ public:
 
     void display()
     {
-        cout << "ID is"
-             << this->id
-             << "Salary is"
+        cout << "Employee ID is "
+             << this->id << endl
+             << "Employee Salary is "
              << this->sal
              << endl;
     }
 
     void accept()
     {
-        cout << "Enter ID"
-             << "Enter Salary" << endl;
         cin >> this->id >> this->sal;
     }
 };
 
-class Manager :virtual public  Employee
+class Manager : virtual public Employee
 {
     float bonus;
     Employee e;
@@ -67,7 +65,7 @@ public:
     }
     Manager(int id, float sal, float bonus) : e(id, sal)
     {
-        this->bonus=bonus;
+        this->bonus = bonus;
     }
     float get_bonus()
     {
@@ -80,27 +78,31 @@ public:
 
     void display()
     {
-        cout << "ID"
-             << "Salary" << endl;
-        cout << e.get_id() << e.get_sal() << endl;
-        cout << "Bonus" << endl;
-        cout << bonus << endl;
+        cout << "Manager ID" << endl
+             << e.get_id() << endl
+             << "Manager Salary" << endl
+             << e.get_sal() << endl
+             << "Manager Bonus" << endl
+             << bonus << endl;
     }
-    void accept(){
-      cout<<"Enter ID"<<"Enter Salary"<<"Enter Bonus"
-      <<endl;
-      e.accept();
-      cin>>bonus;
+    void accept()
+    {
+        cout << "Enter Manager ID "
+             << " Manager Salary "
+             << " Manager Bonus "
+             << endl;
+        e.accept();
+        cin >> bonus;
     }
 
 protected:
     void display_manager()
     {
-        cout << "Bonus is" << bonus;
+        cout << "Manager Bonus is" << bonus << endl;
     }
     void accept_manager()
     {
-        cout << "Enter the bonus" << endl;
+        cout << "Enter the Manager bonus" << endl;
         cin >> this->bonus;
     }
 };
@@ -111,16 +113,17 @@ Salesman Class
 
 class Salesman : virtual public Employee
 {
-    
+
     float comm;
     Employee e;
-    public:
+
+public:
     Salesman()
     {
         comm = 0;
     }
 
-    Salesman(int id, float sal, float comm):e(id,sal)
+    Salesman(int id, float sal, float comm) : e(id, sal)
     {
         this->comm = comm;
     }
@@ -137,52 +140,62 @@ class Salesman : virtual public Employee
     void display()
     {
         e.display();
-        cout << "commission is" << this->comm;
+        cout << "Salesman commission is" << this->comm << endl;
     }
-    void accept(){
+    void accept()
+    {
+        cout << "Enter Salesman ID "
+             << "Enter Salesman Salary "
+             << "Enter the Salesman commission"
+             << endl;
         e.accept();
-        cout << "Enter the commission";
         cin >> this->comm;
     }
 
 protected:
     void display_salesman()
     {
-        cout << "commission is" << this->comm;
+        cout << "Salesman commission is"
+             << this->comm << endl;
     }
 
     void accept_salesman()
     {
-        cout << "Enter the commission";
+        cout << "Enter the Salesman commission" << endl;
         cin >> this->comm;
     }
 };
 
-class sales_manager:Manager,Salesman{
-   Manager m;
-   Salesman s;
-   public:
-    sales_manager(){
-        Manager(0,0.0,0.0);
-        Salesman(0,0.0,0.0);
-    }
-    sales_manager(int id,float sal,float bonus,float comm){
-        Manager(id,sal,bonus);
-        Salesman(id,sal,comm);
+class sales_manager : Manager, Salesman
+{
+    Manager m;
+    Salesman s;
 
+public:
+    sales_manager()
+    {
+        Manager(0, 0.0, 0.0);
+        Salesman(0, 0.0, 0.0);
     }
-    void display(){
+    sales_manager(int id, float sal, float bonus, float comm)
+    {
+        Manager(id, sal, bonus);
+        Salesman(id, sal, comm);
+    }
+    void display()
+    {
         m.display();
         s.display();
-
     }
-    void accept(){
+    void accept()
+    {
         m.accept();
         s.accept();
     }
 };
 
-int main(){
+int main()
+{
     sales_manager sm;
     sm.accept();
     sm.display();
