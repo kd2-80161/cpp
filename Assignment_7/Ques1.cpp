@@ -226,7 +226,7 @@ public:
         cin >> id;
         cout << "Enter the salary" << endl;
         cin >> sal;
-        getchar();
+        // getchar();
         cout << "Enter the dept" << endl;
          getline(cin,this->dept);
         joining.accept();

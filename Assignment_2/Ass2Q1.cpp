@@ -1,4 +1,5 @@
-/*Create a namespace NStudent. Create the Student class(created as per assignment-1 Q3) inside
+/*Create a namespace NStudent. 
+Create the Student class(created as per assignment-1 Q3) inside
 namespace. Test the functionalities.*/
 #include <iostream>
 using namespace std;
@@ -28,13 +29,18 @@ namespace NStudent
             cout << "Enter Roll no";
             cin >> roll_no;
             getchar();
-            cout << "Enter the Name";
+            cout << "Enter the Name"<<endl;
             getline(cin, name);
             cout << "Marks";
             cin >> marks;
         }
     };
 }
+
 int main()
 {
+    NStudent::Student s1;
+    s1.acceptStudentFromConsole();
+    s1.printStudentOnConsole();
+
 }
