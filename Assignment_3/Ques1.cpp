@@ -29,7 +29,7 @@ class Volume{
         cin>>this->height;
     }
 
-    int calculate(){
+    void calculate(){
         cout<<"Volume is\n";
         cout<<this->length*this->width*this->height;
     }
