@@ -92,21 +92,3 @@ int main()
     return 0;
 }
 
-void main1(){
-    int no_obj;
-    cout<<"Enter the number of obj you want to create"<<endl;
-    cin>>no_obj;
-
-    Time **t1 = new Time*[no_obj];
-
-   for(int i=0;i<no_obj;i++){
-    cout
-   }
-
-    for (int i = 0; i < ; i++)
-    {
-        /* code */
-    }
-    
-
-}
