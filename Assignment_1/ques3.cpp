@@ -5,6 +5,7 @@
 // void initStudent();
 // void printStudentOnConsole();
 // void acceptStudentFromConsole();
+
 #include<iostream>
 using namespace std;
 class Student{

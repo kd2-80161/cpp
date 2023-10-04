@@ -61,7 +61,7 @@ int main()
        case 1:
         /* code */
         d1.initDate();
-        cout<<"\nIntilized value"<<endl;
+        cout<<"\nInitalized value"<<endl;
         break;
         case 2:
         d1.printDateConsole();
